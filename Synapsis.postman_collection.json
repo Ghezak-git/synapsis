@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "faa92daf-5470-481b-b1af-2cecb7d8f20a",
+		"name": "Synapsis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10259672"
+	},
+	"item": [
+		{
+			"name": "Transaction List",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\" : \"1\",\r\n    \"perPage\" : \"10\",\r\n    \"search\" : \"\",\r\n    \"sort\" : \"\",\r\n    \"sortColumn\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/transaction/listtransaction",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"transaction",
+						"listtransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"payment_method_name\" : \"BCA\",\r\n    \"payment_method_desc\" : \"BCA a/n 19237912873\",\r\n    \"total\" : 17000000,\r\n    \"detail\" : [\r\n        {\r\n            \"name_product\" : \"Laptop KLJ\",\r\n            \"description_product\" : \"Example Description Laptop KLJ\",\r\n            \"price_product\" : 5000000,\r\n            \"qty\" : 2\r\n        },\r\n        {\r\n            \"name_product\" : \"Laptop POI\",\r\n            \"description_product\" : \"Example Description Laptop POI\",\r\n            \"price_product\" : 7000000,\r\n            \"qty\" : 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/transaction/addtransaction",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"transaction",
+						"addtransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/product/addcart",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"product",
+						"addcart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"aisya1243@gmail.com\",\r\n    \"password\" : \"asdqwe123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/auth/login",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/auth/token",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/auth/logout",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"aisya1243@gmail.com\",\r\n    \"fullname\" : \"Aisya Putri\",\r\n    \"password\" : \"asdqwe123\",\r\n    \"passwordConfirm\" : \"asdqwe123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/auth/signup",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/product/listcart",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"product",
+						"listcart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\" : 1,\r\n    \"qty\" : 3,\r\n    \"method\" : \"update\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/product/updatecart",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"product",
+						"updatecart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\" : \"1\",\r\n    \"perPage\" : \"10\",\r\n    \"search\" : \"\",\r\n    \"sort\" : \"\",\r\n    \"sortColumn\" : \"\",\r\n    \"category\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}api/product/listproducts",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"product",
+						"listproducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payment Method",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/transaction/listpaymentmethod",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"transaction",
+						"listpaymentmethod"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000/",
+			"type": "string"
+		}
+	]
+}
