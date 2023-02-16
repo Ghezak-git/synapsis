@@ -5,7 +5,7 @@ JSON responses are often similar to the way in which DRF makes responses.
 
 for postman collection i added in root file 
 
-ERD this project is [Click Here](https://app.diagrams.net/#G1JgT5loWmWMi9XbD3XOEbDyn5LcppH2cg)
+ERD this project is [Click Here](https://drive.google.com/file/d/1JgT5loWmWMi9XbD3XOEbDyn5LcppH2cg/view)
 
 first of all you must setting env and then, : 
 

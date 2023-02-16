@@ -291,7 +291,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "http://localhost:8000/",
+			"value": "https://synapsis-ghz.herokuapp.com/",
 			"type": "string"
 		}
 	]
