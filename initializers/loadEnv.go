@@ -17,6 +17,7 @@ type Config struct {
 	DBInitial string `mapstructure:"DB_INITIAL"`
 
 	ClientOrigin string `mapstructure:"CLIENT_ORIGIN"`
+	Domain       string `mapstructure:"DOMAIN"`
 
 	AccessTokenPrivateKey  string        `mapstructure:"ACCESS_TOKEN_PRIVATE_KEY"`
 	AccessTokenPublicKey   string        `mapstructure:"ACCESS_TOKEN_PUBLIC_KEY"`

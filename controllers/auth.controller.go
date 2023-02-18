@@ -56,9 +56,9 @@ func (ac *AuthController) Login(ctx *gin.Context) {
 		return
 	}
 
-	ctx.SetCookie("access_token", access_token, config.AccessTokenMaxAge*60, "/", "localhost", false, true)
-	ctx.SetCookie("refresh_token", refresh_token, config.RefreshTokenMaxAge*60, "/", "localhost", false, true)
-	ctx.SetCookie("logged_in", "true", config.AccessTokenMaxAge*60, "/", "localhost", false, true)
+	ctx.SetCookie("access_token", access_token, config.AccessTokenMaxAge*60, "/", config.Domain, false, true)
+	ctx.SetCookie("refresh_token", refresh_token, config.RefreshTokenMaxAge*60, "/", config.Domain, false, true)
+	ctx.SetCookie("logged_in", "true", config.AccessTokenMaxAge*60, "/", config.Domain, false, true)
 
 	ctx.JSON(http.StatusOK, gin.H{"status": "Success", "access_token": access_token})
 }
@@ -95,17 +95,19 @@ func (ac *AuthController) RefreshToken(ctx *gin.Context) {
 		return
 	}
 
-	ctx.SetCookie("access_token", access_token, config.AccessTokenMaxAge*60, "/", "localhost", false, true)
-	ctx.SetCookie("logged_in", "true", config.AccessTokenMaxAge*60, "/", "localhost", false, true)
+	ctx.SetCookie("access_token", access_token, config.AccessTokenMaxAge*60, "/", config.Domain, false, true)
+	ctx.SetCookie("logged_in", "true", config.AccessTokenMaxAge*60, "/", config.Domain, false, true)
 
 	ctx.JSON(http.StatusOK, gin.H{"status": "success", "access_token": access_token})
 }
 
 // Logout Function
 func (ac *AuthController) LogoutUser(ctx *gin.Context) {
-	ctx.SetCookie("access_token", "", -1, "/", "localhost", false, true)
-	ctx.SetCookie("refresh_token", "", -1, "/", "localhost", false, true)
-	ctx.SetCookie("logged_in", "", -1, "/", "localhost", false, true)
+	config, _ := initializers.LoadConfig(".")
+
+	ctx.SetCookie("access_token", "", -1, "/", config.Domain, false, true)
+	ctx.SetCookie("refresh_token", "", -1, "/", config.Domain, false, true)
+	ctx.SetCookie("logged_in", "", -1, "/", config.Domain, false, true)
 
 	ctx.JSON(http.StatusOK, gin.H{"status": "success"})
 }
@@ -163,9 +165,9 @@ func (ac *AuthController) SignUp(ctx *gin.Context) {
 		return
 	}
 
-	ctx.SetCookie("access_token", access_token, config.AccessTokenMaxAge*60, "/", "localhost", false, true)
-	ctx.SetCookie("refresh_token", refresh_token, config.RefreshTokenMaxAge*60, "/", "localhost", false, true)
-	ctx.SetCookie("logged_in", "true", config.AccessTokenMaxAge*60, "/", "localhost", false, true)
+	ctx.SetCookie("access_token", access_token, config.AccessTokenMaxAge*60, "/", config.Domain, false, true)
+	ctx.SetCookie("refresh_token", refresh_token, config.RefreshTokenMaxAge*60, "/", config.Domain, false, true)
+	ctx.SetCookie("logged_in", "true", config.AccessTokenMaxAge*60, "/", config.Domain, false, true)
 
 	ctx.JSON(http.StatusOK, gin.H{"status": "Success", "message": "Success Registration", "access_token": access_token})
 }
